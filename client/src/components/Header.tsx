@@ -70,7 +70,7 @@ export default function Header() {
         >
           <div className="w-14 h-14 rounded-full overflow-hidden shadow-md border-2 border-accent/20 flex items-center justify-center bg-white">
             <img
-              src="/src/assets/logo.png"
+              src="/dist/assets/logo.png"
               alt="Ótica Muribeca Prime Logo"
               className="w-full h-full object-cover"
             />
