@@ -1,0 +1,365 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/**
+ * Design System: Organic Luxury Modernism
+ * 
+ * Color Palette:
+ * - Background: Warm ivory (#F5F1E8)
+ * - Text: Charcoal (#2B2B2B)
+ * - Accent Gold: Warm gold (#D4A574)
+ * - Accent Green: Soft sage (#A8B8A8)
+ * 
+ * Typography:
+ * - Headlines: Cormorant Garamond (serif, elegant)
+ * - Body: Inter (sans-serif, readable)
+ * 
+ * Aesthetic: Organic curves, subtle gradients, natural shadows, fluid animations
+ */
+
+:root {
+  /* Organic Luxury Modernism Color Palette */
+  --primary: #D4A574; /* Warm gold accent */
+  --primary-foreground: #F5F1E8;
+  --sidebar-primary: #D4A574;
+  --sidebar-primary-foreground: #F5F1E8;
+  
+  /* Chart colors (warm palette) */
+  --chart-1: #D4A574;
+  --chart-2: #A8B8A8;
+  --chart-3: #2B2B2B;
+  --chart-4: #8B7355;
+  --chart-5: #C9A876;
+  
+  --radius: 0.75rem;
+  
+  /* Light theme - Warm ivory background */
+  --background: #F5F1E8;
+  --foreground: #2B2B2B;
+  --card: #FFFFFF;
+  --card-foreground: #2B2B2B;
+  --popover: #FFFFFF;
+  --popover-foreground: #2B2B2B;
+  --secondary: #A8B8A8; /* Soft sage green */
+  --secondary-foreground: #2B2B2B;
+  --muted: #E8E3D8;
+  --muted-foreground: #6B6B6B;
+  --accent: #D4A574; /* Warm gold */
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: #E8E3D8;
+  --input: #FFFFFF;
+  --ring: #D4A574;
+  --sidebar: #F5F1E8;
+  --sidebar-foreground: #2B2B2B;
+  --sidebar-accent: #D4A574;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #E8E3D8;
+  --sidebar-ring: #D4A574;
+}
+
+.dark {
+  --primary: #D4A574;
+  --primary-foreground: #F5F1E8;
+  --sidebar-primary: #D4A574;
+  --sidebar-primary-foreground: #F5F1E8;
+  --background: #1A1A1A;
+  --foreground: #F5F1E8;
+  --card: #2B2B2B;
+  --card-foreground: #F5F1E8;
+  --popover: #2B2B2B;
+  --popover-foreground: #F5F1E8;
+  --secondary: #A8B8A8;
+  --secondary-foreground: #F5F1E8;
+  --muted: #3B3B3B;
+  --muted-foreground: #B8B8B8;
+  --accent: #D4A574;
+  --accent-foreground: #1A1A1A;
+  --destructive: #EF4444;
+  --destructive-foreground: #1A1A1A;
+  --border: #3B3B3B;
+  --input: #2B2B2B;
+  --ring: #D4A574;
+  --chart-1: #D4A574;
+  --chart-2: #A8B8A8;
+  --chart-3: #F5F1E8;
+  --chart-4: #C9A876;
+  --chart-5: #8B7355;
+  --sidebar: #2B2B2B;
+  --sidebar-foreground: #F5F1E8;
+  --sidebar-accent: #D4A574;
+  --sidebar-accent-foreground: #1A1A1A;
+  --sidebar-border: #3B3B3B;
+  --sidebar-ring: #D4A574;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Typography: Cormorant Garamond for headlines */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+  }
+  
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl;
+  }
+  
+  h2 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h3 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h4 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  p {
+    @apply text-base md:text-lg leading-relaxed;
+  }
+  
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+  
+  /**
+   * Organic Luxury Modernism: Custom Components
+   */
+  
+  /* Elegant button with warm gold accent */
+  .btn-luxury {
+    @apply px-8 py-3 rounded-full font-semibold text-white bg-accent hover:bg-accent/90 transition-all duration-300 ease-out;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .btn-luxury:hover {
+    @apply shadow-lg scale-105;
+  }
+  
+  /* Organic card with subtle shadow */
+  .card-organic {
+    @apply bg-card rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .card-organic:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Gradient text (warm palette) */
+  .gradient-text {
+    background: linear-gradient(135deg, #D4A574 0%, #A8B8A8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Organic divider with wavy effect */
+  .divider-organic {
+    position: relative;
+    height: 80px;
+    background: url('data:image/svg+xml,<svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,30 Q300,80 600,30 T1200,30 L1200,120 L0,120 Z" fill="%23F5F1E8" opacity="0.8"/></svg>') no-repeat center/cover;
+  }
+  
+  /* Glassmorphism effect */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+    opacity: 0.8;
+  }
+}
+
+/* Animation utilities for Framer Motion integration */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.7s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
